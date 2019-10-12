@@ -1,8 +1,8 @@
 
-ofsx = wi / 2 + 48;
+//ofsx = wi / 2 + 48;
 ofsy = 48;
 
-max_x = wi/2 - 96;
+//max_x = wi/2 - 96;
 max_y = 15;
 max_a = 45;
 

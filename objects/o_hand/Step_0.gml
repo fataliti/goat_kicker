@@ -1,9 +1,10 @@
 
 
-ofsx = o_goat.x - o_control.camx + 48;
-max_x = ofsx - 156;
+ofsx = o_control.camx + wi - o_goat.x - 48
+max_x = ofsx - 64;
 
-x = o_goat.x - ofsx + max_x * (image_angle / max_a);
+
+x = o_goat.x + ofsx - max_x * (image_angle / max_a);
 y = init_y - max_y * (image_angle / max_a);
 
 if kick_stage == 1 {

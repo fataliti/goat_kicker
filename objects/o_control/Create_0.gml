@@ -3,7 +3,7 @@ var kaz = "ә, ғ, қ, ң, ө, ұ, ү, h, і";
 
 #macro wi 960
 #macro he 540
-#macro spd 20
+#macro spd 15
 #macro sec room_speed
 
 
@@ -54,6 +54,7 @@ pattern_r = 0;
 
 part_time = 0;
 
+offset      = 50;
 part_wi     =  wi-60
 part_ofs_x  =  30
 part_max    =  120

@@ -8,6 +8,9 @@
 //!#mfunc HAND {"args":[],"order":[]}
 #macro HAND_mf0  o_hand.kick_stage = 1; audio_play_sound(sfx_k, 0, false);
 
+//!#mfunc msg {"args":[],"order":[]}
+#macro msg_mf0  show_debug_message("l");
+
 
 grv = 0;
 

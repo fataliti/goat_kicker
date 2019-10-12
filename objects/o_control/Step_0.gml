@@ -20,7 +20,7 @@ with( o_prop_parent) {
 if !countdown {
     
     part_time++;
-    if part_time > part_max {
+    if part_time >= part_max {
         part_time = 0;
         pattern_r++;
         
@@ -65,7 +65,7 @@ if prop_spawn {
                         _prop = o_grass;
                     }
                     
-                    _xp = wi / 2 + (spd * part_tick * 16 *_rep);
+                    _xp = wi / 2 + (spd * part_tick * 16 *_rep) - offset;
                     instance_create_depth(  _xp + spd * part_tick * (c + 1) + countdown * spd, 300, 0, _prop);
                 }
             }
