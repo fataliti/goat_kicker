@@ -31,8 +31,17 @@ if !countdown {
     }
     
     if  pattern_r == 7 {
-        if !audio_is_playing( sfx_hold) {
-            audio_play_sound( sfx_hold, 10, false);
+        
+        var hold = keyboard_check( vk_space);
+        
+        
+        if hold {
+            if !audio_is_playing( sfx_hold) {
+                var _snd = audio_play_sound( sfx_hold, 10, false);
+                audio_sound_set_track_position( _snd, audio_sound_length( sfx_hold) * ( part_time / part_max));
+            }
+        } else {
+            audio_stop_sound(sfx_hold);
         }
     }
     
@@ -55,7 +64,6 @@ if prop_spawn {
         for( var b = 0; b < array_length_1d( _get) b++) {
             _instr = _get[b];
             
-            //show_debug_message(_instr)
             for( var c = 0; c < array_length_1d( _instr); c++) {
                 if _instr[ c] == 1 {
                     

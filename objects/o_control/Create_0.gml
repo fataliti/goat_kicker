@@ -3,8 +3,11 @@ var kaz = "ә, ғ, қ, ң, ө, ұ, ү, h, і";
 
 #macro wi 960
 #macro he 540
-#macro spd 15
+#macro spd 5
 #macro sec room_speed
+#macro mascx 56
+#macro mascy 96
+#macro offset 35;
 
 
 camera = camera_create_view( 0, 0, room_width, room_height);
@@ -26,27 +29,26 @@ while xx < room_width {
 
 countdown = room_speed * 2;
 //  паттерны
-//  [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
 var p_1_bass = [ 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 var p_1_clap = [ 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0];
-var p_1 = [ p_1_bass, p_1_clap];
+var p_1 = [ p_1_clap, p_1_bass, ];
 
 var p_2_bass = [ 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0];
 var p_2_clap = [ 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0];
-var p_2 = [ p_2_bass, p_2_clap];
+var p_2 = [ p_2_clap, p_2_bass ];
 
 var p_3_bass = [ 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0];
 var p_3_clap = [ 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0];
-var p_3 = [ p_3_bass, p_3_clap];
+var p_3 = [ p_3_clap, p_3_bass ];
 
 var p_4_bass = [ 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0];
 var p_4_clap = [ 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0];
-var p_4 = [ p_4_bass, p_4_clap];
+var p_4 = [ p_4_clap, p_4_bass ];
 
 var p_5_bass = [ 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0];
 var p_5_clap = [ 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0];
-var p_5 = [ p_5_bass, p_5_clap];
+var p_5 = [ p_5_clap, p_5_bass ];
 
 patterns = [ p_1, p_2, p_3, p_4, p_5, [[],[]] ];
 pattern = 0;
@@ -54,7 +56,7 @@ pattern_r = 0;
 
 part_time = 0;
 
-offset      = 50;
+
 part_wi     =  wi-60
 part_ofs_x  =  30
 part_max    =  120
@@ -66,6 +68,5 @@ l0 = 350
 l1 = 390
 l2 = 430
 l3 = 470
-
 
 prop_spawn = true;

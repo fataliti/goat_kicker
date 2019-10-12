@@ -271,6 +271,14 @@
             }
         },
         {
+            "Key": "a1916357-11f3-a3fc-926c-94000773d87a",
+            "Value": {
+                "id": "21bd6019-c5c7-1c3f-4831-ddc1a24290fe",
+                "resourcePath": "objects\\o_prop_sound\\o_prop_sound.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "a9188620-a624-4a5a-83ae-a1b53faf038b",
             "Value": {
                 "id": "73896f32-ee11-44a6-8c40-faf2ad73755e",
