@@ -1,43 +1,49 @@
 
-
-var jump = keyboard_check( ord("W"));
-var kick = keyboard_check_pressed( ord("E"));
-
-if !place_meeting( x, y + 1, o_solid) {
-    grv += grv_streng;
-} else {
-    if jump {
-        grv -= jump_streng;
-        KICK_mf0;   
-    }
-}
-
-
-var col_grass = collision_rectangle( bbox_left, bbox_top, bbox_right, bbox_bottom, o_grass, false, true);
-if col_grass != noone {
-    if col_grass.eated == false {
-        state = STATE.EAT;
-        col_grass.eated = true;   
-    }
-}
-
+var legs = keyboard_check_pressed( ord("D"));
+var hand = keyboard_check_pressed( ord("K"));
+var hold = keyboard_check( vk_space);
 
 switch(state) {
-    case STATE.WALK:
+    case STATES.WALK:
         x += spd;
+        
+        var col_grass = collision_rectangle( bbox_left, bbox_top, bbox_right, bbox_bottom, o_grass, false, true);
+        if col_grass != noone {
+            if col_grass.activated == false && col_grass.x < x{
+                audio_play_sound(sfx_k, 0, false);
+                //state = STATES.EAT;
+                col_grass.activated = true;   
+            }
+        }
+        
+        var col_stone = collision_rectangle( bbox_left, bbox_top, bbox_right, bbox_bottom, o_stone, false, true);
+        if col_stone != noone && col_stone.x < x{
+            if col_stone.activated == false {
+                audio_play_sound(sfx_d, 0, false);
+                //stcol_stoneate = STATES.EAT;
+                col_stone.activated = true;   
+            }
+        }
+        
+        if legs && place_meeting( x, y + 1, o_solid) {
+            KICK_mf0;  
+            grv -= jump_streng;
+        }
     break;
     
-    case STATE.EAT:
-        if kick {
+    case STATES.EAT:
+        if legs {
             KICK_mf0;
-            state = STATE.WALK;
+            state = STATES.WALK;
             grv -= jump_streng / 2;
         }
     break;
 } 
 
 
-
+if !place_meeting( x, y + 1, o_solid) {
+    grv += grv_streng;
+} 
 
 if place_meeting( x, y + grv, o_solid) {
     while !place_meeting( x, y + sign(grv), o_solid){

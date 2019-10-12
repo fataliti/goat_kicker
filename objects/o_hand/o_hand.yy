@@ -1,23 +1,23 @@
 {
-    "id": "7e3d778b-a4f5-452b-b166-55fbdbc08a8c",
+    "id": "2b67bd28-ff1e-9a5d-8e14-19a3c6462eef",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "o_stone",
+    "name": "o_hand",
     "eventList": [
         {
-            "id": "e15c6a91-daab-3729-a854-4b1d919cad91",
+            "id": "7850366b-120e-7ad9-f4b6-294517f5b1eb",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 0,
-            "m_owner": "7e3d778b-a4f5-452b-b166-55fbdbc08a8c"
+            "m_owner": "2b67bd28-ff1e-9a5d-8e14-19a3c6462eef"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
-    "parentObjectId": "153c1e56-ea96-33b9-7973-c14a71faf9b8",
+    "parentObjectId": "00000000-0000-0000-0000-000000000000",
     "persistent": false,
     "physicsAngularDamping": 0.1,
     "physicsDensity": 0.5,
@@ -33,6 +33,6 @@
     "physicsStartAwake": true,
     "properties": null,
     "solid": false,
-    "spriteId": "21411377-c544-4dc6-92fa-c17a87b1f70f",
+    "spriteId": "76c4f51d-1563-49bf-baf9-18edcce1f90b",
     "visible": true
 }
