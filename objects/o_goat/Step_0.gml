@@ -73,6 +73,8 @@ switch(state) {
     break;
     
     case STATES.EAT:
+
+        x += spd / 2;
         if hand {
             HAND_mf0;
             state = STATES.WALK;
@@ -82,6 +84,7 @@ switch(state) {
     
     
     case STATES.STAND:
+        x += spd / 2;
         
         if legs {
             KICK_mf0;

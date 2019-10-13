@@ -3,7 +3,7 @@ var kaz = "ә, ғ, қ, ң, ө, ұ, ү, h, і";
 
 #macro wi 960
 #macro he 540
-#macro spd 10
+#macro spd 8
 #macro sec room_speed
 #macro mascx 56
 #macro mascy 96
