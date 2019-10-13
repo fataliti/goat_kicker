@@ -7,21 +7,22 @@ var kaz = "ә, ғ, қ, ң, ө, ұ, ү, h, і";
 #macro sec room_speed
 #macro mascx 56
 #macro mascy 96
-#macro offset 35;
+#macro offset 50
 
+#macro spawn_height 380
 
 camera = camera_create_view( 0, 0, room_width, room_height);
 camx   = 0;
 view_set_camera( 0, camera);
 
 
-instance_create_depth( room_width / 2, 300, 0, o_goat);
+instance_create_depth( room_width / 2, spawn_height, 0, o_goat);
 instance_create_depth( 0, 0, 0, o_leg);
 instance_create_depth( 0, 0, 0, o_hand);
 
 var xx = 0;
 while xx < room_width {
-    instance_create_depth( xx, 300, 0, o_solid);
+    instance_create_depth( xx, spawn_height, 0, o_solid);
     xx += 32;
 }
 
@@ -57,16 +58,21 @@ pattern_r = 0;
 part_time = 0;
 
 
-part_wi     =  wi-60
-part_ofs_x  =  30
-part_max    =  120
+sound_ofs   =  (960 - 806) / 2;
+part_wi     =  wi-(960-(806 - 44));
+part_ofs_x  =  (960 - 806 + 44) / 2;
+part_max    =  120;
 part_part   = part_wi / 16;
 part_tick   = part_max / 16;
 
-l_inc = 40;
-l0 = 350
-l1 = 390
-l2 = 430
-l3 = 470
+
+panel_y = 400;
+l_inc = 31;
+l0 = 398;
+l1 = l0 + 31 * 1;
+l2 = l0 + 31 * 2;
+l3 = l0 + 31 * 3;
 
 prop_spawn = true;
+
+

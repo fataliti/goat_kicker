@@ -1,6 +1,6 @@
 
 if place_free( camx + wi, 460) {
-    instance_create_depth( camx + wi, 300, 0, o_solid);
+    instance_create_depth( camx + wi, spawn_height, 0, o_solid);
 }
 
 camx += spd;
@@ -73,15 +73,25 @@ if prop_spawn {
                         _prop = o_grass;
                     }
                     
-                    _xp = wi / 2 + (spd * part_tick * 16 *_rep) - offset;
-                    instance_create_depth(  _xp + spd * part_tick * (c + 1) + countdown * spd, 300, 0, _prop);
+                    
+                    
+                    _xp = wi / 2 + (spd * part_tick * 16 *_rep) - offset ;
+                    instance_create_depth(  _xp + spd * part_tick * (c + 1) + countdown * spd, spawn_height, 0, _prop);
+
                 }
             }
         }
-        
+        /*
+        if ( _rep + 1 ) mod 8 == 1 {
+            _xp = wi / 2 + (spd * part_tick * 16 *_rep) - offset ;
+            instance_create_depth(  _xp + spd * part_tick * (7 + 1) + countdown * spd, 300, 0, o_borderer);
+        }
+        */
         _rep++;
         if _rep mod 8 == 0 {
             a++;
+            _xp = wi / 2 + (spd * part_tick * 16 *_rep) - offset ;
+            instance_create_depth(  _xp + /*spd * part_tick * (1) +*/ countdown * spd  - spd * part_tick * (8), spawn_height, 0, o_borderer);
         }
     }
     

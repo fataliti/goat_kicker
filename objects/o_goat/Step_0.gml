@@ -1,7 +1,26 @@
 
 var legs = keyboard_check_pressed( ord("D"));
 var hand = keyboard_check_pressed( ord("K"));
+var hide = keyboard_check( vk_space);
 
+sprite_index = s_goat_anim;
+
+if o_control.pattern_r == 7 {
+    
+    if hide {
+        image_alpha = 0.5;
+    } else {
+        image_alpha = 1;
+    }
+    
+    if o_control.part_time > o_control.part_max / 2 {
+        if !hide {
+            x = xprevious;
+        }
+    }
+} else {
+    image_alpha = 1;
+}
 
 switch(state) {
     case STATES.WALK:
@@ -22,6 +41,8 @@ switch(state) {
                         }
                         if place_meeting( x, y, o_goat) && !activated {
                             other.state = STATES.STAND;
+                            //msg();
+                            //audio_play_sound( sfx_d, 10, false)
                             activated = true;    
                         }
                         
@@ -33,6 +54,8 @@ switch(state) {
                         
                         if place_meeting( x, y, o_goat) && !activated {
                             other.state = STATES.EAT;
+                            //msg();
+                            //audio_play_sound( sfx_k, 10, false);
                             activated = true;
                         }
                     }
@@ -63,6 +86,7 @@ switch(state) {
 
 if !place_meeting( x, y + 1, o_solid) {
     grv += grv_streng;
+    sprite_index = s_goat_jump;
 } 
 
 if place_meeting( x, y + grv, o_solid) {
