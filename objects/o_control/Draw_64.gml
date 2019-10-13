@@ -1,17 +1,17 @@
 
 
-draw_text( 5, 5, part_time);
-draw_text( 5, 25, part_time/part_max);
-draw_text( 5, 45, pattern_r);
+//draw_text( 5, 5, part_time);
+//draw_text( 5, 25, part_time/part_max);
+//draw_text( 5, 45, pattern_r);
 
 
 draw_sprite( s_soundboard, 0, sound_ofs, panel_y );
 
-draw_line_width( part_ofs_x, l1, part_ofs_x, l3, 2);
-draw_line_width( part_ofs_x + part_wi, l1, part_ofs_x + part_wi, l3, 2);
-draw_line_width( part_ofs_x, l1, part_ofs_x + part_wi, l1, 2);
-draw_line_width( part_ofs_x, l2, part_ofs_x + part_wi, l2, 2);
-draw_line_width( part_ofs_x, l3, part_ofs_x + part_wi, l3, 2);
+//draw_line_width( part_ofs_x, l1, part_ofs_x, l3, 2);
+//draw_line_width( part_ofs_x + part_wi, l1, part_ofs_x + part_wi, l3, 2);
+//draw_line_width( part_ofs_x, l1, part_ofs_x + part_wi, l1, 2);
+//draw_line_width( part_ofs_x, l2, part_ofs_x + part_wi, l2, 2);
+//draw_line_width( part_ofs_x, l3, part_ofs_x + part_wi, l3, 2);
 
 var curs_x = part_ofs_x + part_wi * ( part_time/part_max);
 draw_circle( curs_x, l0, 6, false);

@@ -3,11 +3,11 @@ var kaz = "ә, ғ, қ, ң, ө, ұ, ү, h, і";
 
 #macro wi 960
 #macro he 540
-#macro spd 5
+#macro spd 10
 #macro sec room_speed
 #macro mascx 56
 #macro mascy 96
-#macro offset 50
+#macro offset 10
 
 #macro spawn_height 380
 
@@ -28,7 +28,7 @@ while xx < room_width {
 
 
 
-countdown = room_speed * 2;
+countdown = room_speed * 3;
 //  паттерны
 
 var p_1_bass = [ 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -76,3 +76,4 @@ l3 = l0 + 31 * 3;
 prop_spawn = true;
 
 
+_snd_hold = -1;

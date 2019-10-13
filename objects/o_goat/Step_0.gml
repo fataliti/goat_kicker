@@ -13,9 +13,12 @@ if o_control.pattern_r == 7 {
         image_alpha = 1;
     }
     
-    if o_control.part_time > o_control.part_max / 2 {
-        if !hide {
-            x = xprevious;
+    if o_control.part_time > o_control.part_max * 0.25 {
+        
+        //show_debug_message (" no hide")
+        
+        if !hide && state == STATES.WALK {
+            x -= spd / 2;
         }
     }
 } else {
@@ -31,9 +34,13 @@ switch(state) {
         var call_hand = false; 
         
         var _x = o_control.camx + wi;
-        with( o_prop_sound) {
+        
+        var _nir = instance_nearest( bbox_right, bbox_bottom, o_prop_sound);
+        
+        
+        with( _nir) {
             if x < _x && !activated {
-                if collision_rectangle(x-mascx, y-mascy, bbox_right, y, o_goat, false, true) {
+                if /*collision_rectangle(x-mascx, y-mascy, bbox_right, y, o_goat, false, true)*/ distance_to_object( other) < mascx {
                     if object_index == o_stone {
                         if legs {
                             activated = true;
@@ -86,7 +93,10 @@ switch(state) {
 
 if !place_meeting( x, y + 1, o_solid) {
     grv += grv_streng;
-    sprite_index = s_goat_jump;
+    
+    // if abs(grv) > 1 {
+        // image_index = 0;
+    // }
 } 
 
 if place_meeting( x, y + grv, o_solid) {

@@ -33,15 +33,19 @@ if !countdown {
     if  pattern_r == 7 {
         
         var hold = keyboard_check( vk_space);
-        
+        if !audio_is_playing( sfx_hold) {
+            _snd_hold = audio_play_sound( sfx_hold, 10, false);
+        }
         
         if hold {
-            if !audio_is_playing( sfx_hold) {
-                var _snd = audio_play_sound( sfx_hold, 10, false);
-                audio_sound_set_track_position( _snd, audio_sound_length( sfx_hold) * ( part_time / part_max));
-            }
+            //if !audio_is_playing( sfx_hold) {
+                //var _snd_hold = audio_play_sound( sfx_hold, 10, false);
+                //audio_sound_set_track_position( sfx_hold, audio_sound_length( sfx_hold) * ( part_time / part_max));
+                audio_sound_gain( _snd_hold, 1, 0);
+            //}
         } else {
-            audio_stop_sound(sfx_hold);
+            audio_sound_gain( _snd_hold, 0, 0);
+            //audio_stop_sound(_snd_hold);
         }
     }
     
