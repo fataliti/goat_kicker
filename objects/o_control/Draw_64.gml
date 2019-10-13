@@ -1,4 +1,6 @@
 
+if pattern > 5 
+    pattern = 5;
 
 //draw_text( 5, 5, part_time);
 //draw_text( 5, 25, part_time/part_max);

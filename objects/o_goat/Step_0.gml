@@ -46,11 +46,13 @@ switch(state) {
                             activated = true;
                             KICK_mf0;
                         }
-                        if place_meeting( x, y, o_goat) && !activated {
-                            other.state = STATES.STAND;
+                        if place_meeting( x, y, other) && !activated {
+                            show_debug_message( "aaaaaa")
+                            other.x -= spd / 2;
+                            //other.state = STATES.STAND;
                             //msg();
                             //audio_play_sound( sfx_d, 10, false)
-                            activated = true;    
+                            //activated = true;    
                         }
                         
                     } else if object_index == o_grass {
@@ -59,11 +61,13 @@ switch(state) {
                             HAND_mf0;
                         }
                         
-                        if place_meeting( x, y, o_goat) && !activated {
-                            other.state = STATES.EAT;
+                        if place_meeting( x, y, other) && !activated {
+                            show_debug_message( "aaaaaa")
+                            other.x -= spd / 2;
+                            //other.state = STATES.EAT;
                             //msg();
                             //audio_play_sound( sfx_k, 10, false);
-                            activated = true;
+                            //activated = true;
                         }
                     }
                 }
