@@ -1,5 +1,8 @@
 
+
 var kaz = "ә, ғ, қ, ң, ө, ұ, ү, h, і";
+window_set_caption( "ешкі шекарасында");
+
 
 #macro wi 960
 #macro he 540

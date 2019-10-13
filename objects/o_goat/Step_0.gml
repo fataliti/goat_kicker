@@ -47,7 +47,7 @@ switch(state) {
                             KICK_mf0;
                         }
                         if place_meeting( x, y, other) && !activated {
-                            show_debug_message( "aaaaaa")
+                            //show_debug_message( "aaaaaa")
                             other.x -= spd / 2;
                             //other.state = STATES.STAND;
                             //msg();
@@ -62,7 +62,7 @@ switch(state) {
                         }
                         
                         if place_meeting( x, y, other) && !activated {
-                            show_debug_message( "aaaaaa")
+                            //show_debug_message( "aaaaaa")
                             other.x -= spd / 2;
                             //other.state = STATES.EAT;
                             //msg();

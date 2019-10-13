@@ -7,7 +7,7 @@ camx += spd;
 camera_set_view_pos( camera, camx, 0);
 
 if camx > o_goat.x {
-    show_message( "fail");
+    show_message( "сен жеңіліп қалды");
     game_restart();
 }
 
