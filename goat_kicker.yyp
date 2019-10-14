@@ -191,22 +191,6 @@
             }
         },
         {
-            "Key": "5edb9bc3-7f82-48ad-ab4a-d4727e96032e",
-            "Value": {
-                "id": "843001f5-7b63-432d-9dbf-82463c8ce0cd",
-                "resourcePath": "sprites\\s_goat_jump\\s_goat_jump.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "70ac6988-397d-c801-492c-02e77a1f8b11",
-            "Value": {
-                "id": "5b1ba137-3656-e66c-6fab-6ee886bbe7b6",
-                "resourcePath": "scripts\\dict_lang_kaz\\dict_lang_kaz.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "76c4f51d-1563-49bf-baf9-18edcce1f90b",
             "Value": {
                 "id": "1b408a9a-8976-494b-8f3f-29f63ca8a6d5",

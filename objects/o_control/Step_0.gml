@@ -27,25 +27,23 @@ if !countdown {
         if pattern_r > 7 {
             pattern++;
             pattern_r = 0;
+            
+            if pattern > 5 
+                pattern = 5;
+            
         }
     }
     
     if  pattern_r == 7 {
-        
         var hold = keyboard_check( vk_space);
         if !audio_is_playing( sfx_hold) {
             _snd_hold = audio_play_sound( sfx_hold, 10, false);
         }
         
         if hold {
-            //if !audio_is_playing( sfx_hold) {
-                //var _snd_hold = audio_play_sound( sfx_hold, 10, false);
-                //audio_sound_set_track_position( sfx_hold, audio_sound_length( sfx_hold) * ( part_time / part_max));
-                audio_sound_gain( _snd_hold, 1, 0);
-            //}
+            audio_sound_gain( _snd_hold, 1, 0);
         } else {
             audio_sound_gain( _snd_hold, 0, 0);
-            //audio_stop_sound(_snd_hold);
         }
     }
     
@@ -77,27 +75,21 @@ if prop_spawn {
                         _prop = o_grass;
                     }
                     
-                    
-                    
                     _xp = wi / 2 + (spd * part_tick * 16 *_rep) - offset ;
                     instance_create_depth(  _xp + spd * part_tick * (c + 1) + countdown * spd, spawn_height, 0, _prop);
 
                 }
             }
         }
-        /*
-        if ( _rep + 1 ) mod 8 == 1 {
-            _xp = wi / 2 + (spd * part_tick * 16 *_rep) - offset ;
-            instance_create_depth(  _xp + spd * part_tick * (7 + 1) + countdown * spd, 300, 0, o_borderer);
-        }
-        */
+
         _rep++;
         if _rep mod 8 == 0 {
             a++;
             _xp = wi / 2 + (spd * part_tick * 16 *_rep) - offset ;
-            instance_create_depth(  _xp + /*spd * part_tick * (1) +*/ countdown * spd  - spd * part_tick * (8), spawn_height, 0, o_borderer);
+            instance_create_depth(  _xp + countdown * spd  - spd * part_tick * (8), spawn_height, 0, o_borderer);
         }
     }
     
     prop_spawn = false;
 }
+

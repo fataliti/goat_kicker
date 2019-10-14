@@ -1,15 +1,8 @@
-
-
-var kaz = "ә, ғ, қ, ң, ө, ұ, ү, h, і";
 window_set_caption( "ешкі шекарасында");
 
-
 #macro wi 960
-#macro he 540
 #macro spd 8
-#macro sec room_speed
-#macro mascx 56
-#macro mascy 96
+#macro dist 56
 #macro offset 10
 
 #macro spawn_height 380
@@ -28,8 +21,6 @@ while xx < room_width {
     instance_create_depth( xx, spawn_height, 0, o_solid);
     xx += 32;
 }
-
-
 
 countdown = room_speed * 3;
 //  паттерны
@@ -77,6 +68,5 @@ l2 = l0 + 31 * 2;
 l3 = l0 + 31 * 3;
 
 prop_spawn = true;
-
 
 _snd_hold = -1;
